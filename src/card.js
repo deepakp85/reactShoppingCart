@@ -15,13 +15,19 @@ export default function Card(props) {
               <a href="#!">{props.productData.name}</a>
             </h4>
             <h5>${props.productData.price}</h5>
-            <p className="card-text">
-              {props.productData.description}
-            </p>
+            <p className="card-text">{props.productData.description}</p>
           </div>
           <div className="card-footer">
             <small className="text-muted">★ ★ ★ ★ ☆</small>
-            <span>{" "}<button className="btn btn-primary btn-sm" onClick={() => props.handleClick(props.productData)}>Add to Cart</button></span>
+            <span>
+              <button style={{marginLeft:'3rem'}}
+                className="btn btn-primary btn-sm"
+                disabled={props.btnst.includes(props.productData.id)}
+                onClick={() => props.handleClick(props.productData)}
+              >
+                Add to Cart
+              </button>
+            </span>
           </div>
         </div>
       </div>
